@@ -5,7 +5,7 @@
   "author": "anhe@garena.com",
   "private": true,
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
+    "build": "npm run client:build && npm run server:build",
     "link": "cross-env CDN=/cdn/assets NODE_ENV=linking webpack-dev-server --inline --hot --disable-host-check --host 0.0.0.0",
     "client:dev": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack.client.js",
     "dev": "cross-env CDN=/cdn/assets NODE_ENV=development webpack-dev-server --inline --hot --disable-host-check --host 0.0.0.0",

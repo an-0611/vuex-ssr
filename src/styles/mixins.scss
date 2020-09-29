@@ -1,0 +1,176 @@
+/* region query */
+@mixin withRegion($region) {
+  html[data-region='#{$region}'] & {
+    @content;
+  }
+}
+
+/* media query */
+@mixin queryMaxWidth($width) {
+  @media only screen and (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin queryMinWidth($width) {
+  @media only screen and (min-width: #{$width}px) {
+    @content;
+  }
+}
+
+
+
+@mixin position(
+  $pos,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $z-index: null
+) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z-index;
+}
+
+@mixin sizeWH($width: null, $height: null, $display: null, $pos: null) {
+  width: $width;
+  height: $height;
+  display: $display;
+  position: $pos;
+}
+
+@mixin inlineBlockWH($width: null, $height: null) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+}
+
+@mixin textMixin(
+  $color: null,
+  $size: null,
+  $weight: null,
+  $transform: null,
+  $decoration: null,
+  $align: null,
+  $style: null
+) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+  text-transform: $transform;
+  text-decoration: $decoration;
+  text-align: $align;
+}
+
+/* ellipsis */
+@mixin ellipsis($e: n) {
+	overflow: hidden;
+	white-space: nowrap;
+	@if $e == e {
+		text-overflow: ellipsis;
+	}
+}
+
+/* fullscreen background */
+@mixin fullscreenBg($url) {
+  background: url('#{$url}') center / 100% auto no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+/* full size */
+@mixin fullsize() {
+  width: 100%;
+  height: 100%;
+}
+
+/* full cover */
+@mixin fullcover() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* clear float */
+@mixin clear() {
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+
+
+/* CDN settings */
+@function assetsUrl($path) {
+  @return url('#{$cdn}/#{$path}');
+}
+
+@mixin imageCDN($path, $width, $height) {
+  @include sizeWH($width, $height);
+  background: url('#{$cdn}/#{$path}') center / 100% auto no-repeat;
+}
+
+@mixin i18nBgImg($paths...) {
+  @each $locale in $locales {
+    html:lang(#{$locale}) & {
+      $urls: ();
+      @each $path in $paths {
+        $urls: ($urls, assetsUrl('#{$locale}/#{$path}'));
+      }
+      background-image: $urls;
+    }
+  }
+}
+
+
+
+/* align center */
+@mixin alignCenter($left:0, $right:0) {
+  margin: auto;
+  left: $left;
+  right: $right;
+}
+
+@mixin autoCenter($top:0, $right:0, $bottom:0, $left:0){
+  margin: auto;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+
+
+/* setup fullscreen */
+@mixin fullscreenSetup {
+  position: fixed; // have to fixed in innerHeight & innerWidth
+  /* force landscape */
+  @media only screen and (orientation: portrait) {
+    transform: rotate(90deg);
+    transform-origin: 50vmin 50vmin;
+  }
+}
+
+/* Disable selection/copy in UIWebView */
+@mixin noTouchOrSelection() {
+  -webkit-touch-callout: none;
+  user-select: none;
+}

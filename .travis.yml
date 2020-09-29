@@ -7,7 +7,7 @@ services:
 
 env:
     global:
-        - COMMIT=${TRAVIS_COMMIT::8}
+        - COMMIT=${TRAVIS_COMMIT::6}
         - IMAGE=an19940611/vuex-ssr
 
 before_install:
@@ -16,6 +16,7 @@ before_install:
 
 install: 
     - npm install -g heroku
+    - npm install -g cross-env
 
 script: 
     - docker version

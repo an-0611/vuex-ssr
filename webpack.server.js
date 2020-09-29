@@ -6,8 +6,10 @@ const { merge } = require('webpack-merge');
 const base = require('./webpack.base');
 // const deploymentRegion = process.env.REGION;
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 const nodeExternals = require('webpack-node-externals');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// eslint-disable-next-line import/no-unresolved
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 // const isProd = process.env === 'production';
 
@@ -18,7 +20,6 @@ module.exports = merge(base, {
   },
   devtool: false,
   output: {
-    
     filename: '[name].bundle.js',
     libraryTarget:'commonjs2' //  指定导出方式
   },
@@ -29,19 +30,19 @@ module.exports = merge(base, {
         'process.env': 'production'
     }),
   ],
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          output: {
-            comments: false
-          },
-          minify: {},
-          compress: {
-              booleans: true,
-          }
-        }
-      })
-    ]
-  }
+  // optimization: {
+  //   minimizer: [
+  //     new UglifyJsPlugin({
+  //       uglifyOptions: {
+  //         output: {
+  //           comments: false
+  //         },
+  //         minify: {},
+  //         compress: {
+  //             booleans: true,
+  //         }
+  //       }
+  //     })
+  //   ]
+  // }
 })

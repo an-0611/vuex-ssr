@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 // const resolve = (dir) => path.resolve(__dirname, dir);
 
-require('./webpack.config.extend'); // to get process.env.REGION;
+require('./webpack.config.extend');
 const deploymentRegion = process.env.REGION;
 
 const server = express();
@@ -57,7 +57,7 @@ server.get('*', (req, res) => {
 //   // })
 });
  
-const port = 3000
+const port = 3003
 
 server.listen(port, function(error) {
   if (error) {

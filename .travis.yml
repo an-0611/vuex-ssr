@@ -15,9 +15,8 @@ before_install:
     - docker login --username=_ --password=$(heroku auth:token) registry.heroku.com
 
 install: 
-    - npm install -g
+    - npm install --production=false
     - npm install -g heroku
-    - ./node_modules/.bin/webpack
 
 script: 
     - docker version

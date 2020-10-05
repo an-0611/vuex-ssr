@@ -19,7 +19,7 @@ install:
     - npm install -g heroku
 
 script: 
-    - ./bin/webpack
+    - ./node_modules/.bin/webpack
     - docker version
     - docker-compose version
     - yarn build

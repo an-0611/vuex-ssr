@@ -11,8 +11,8 @@
     "dev": "cross-env CDN=/cdn/assets NODE_ENV=development webpack-dev-server --inline --hot --disable-host-check --host 0.0.0.0",
     "start": "npm run ssr:build && npm run start-server",
     "ssr:build": "npm run client:build && npm run server:build",
-    "client:build": "./node_modules/.bin/cross-env NODE_ENV=production webpack --config ./webpack.client.js --progress --hide-modules",
-    "server:build": "./node_modules/.bin/cross-env NODE_ENV=production webpack --config ./webpack.server.js --progress --hide-modules",
+    "client:build": "cross-env NODE_ENV=production webpack --config ./webpack.client.js --progress --hide-modules",
+    "server:build": "cross-env NODE_ENV=production webpack --config ./webpack.server.js --progress --hide-modules",
     "start-server": "node server.js"
   },
   "lint-staged": {

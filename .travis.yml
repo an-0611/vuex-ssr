@@ -15,8 +15,8 @@ before_install:
     - docker login --username=_ --password=$(heroku auth:token) registry.heroku.com
 
 install: 
+    - npm install -g
     - npm install -g heroku
-    - npm install -g cross-env
 
 script: 
     - docker version

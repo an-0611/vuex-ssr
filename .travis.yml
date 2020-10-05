@@ -17,9 +17,9 @@ before_install:
 install: 
     - npm install -g
     - npm install -g heroku
+    - ./node_modules/.bin/webpack
 
 script: 
-    - ./node_modules/.bin/webpack
     - docker version
     - docker-compose version
     - yarn build

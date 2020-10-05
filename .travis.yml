@@ -16,7 +16,7 @@ before_install:
 
 install: 
     - npm install -g heroku
-    - npm install webpack-cli -g
+    - npm install webpack webpack-dev-server --save-dev
 
 script: 
     - docker version

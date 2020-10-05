@@ -17,6 +17,7 @@ export default {
     return { isInitialized: false };
   },
 
+
   // computed: {
   //   ...mapState('Game', ['profile']),
   // },

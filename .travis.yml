@@ -17,6 +17,7 @@ before_install:
 install: 
     - npm install -g
     - npm install -g heroku
+    - npm install -g cross-env
 
 script: 
     - docker version

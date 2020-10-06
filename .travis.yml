@@ -13,11 +13,12 @@ env:
 before_install:
     - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin;
     - docker login --username=_ --password=$(heroku auth:token) registry.heroku.com
+    - npm uninstall -g webpack
 
 install: 
     # install dep
     - npm install -g heroku
-    - echo "yes" | npm install -g webpack
+    - npm i -D webpack webpack-cli
 
 script: 
     - docker version

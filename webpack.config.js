@@ -30,7 +30,7 @@ const sassEnvs = extendedConfig.env
   .join('');
 
 const config = {
-  mode: isProd ? 'production' : 'development',
+  mode: 'development',
   entry: fromSrc('entry-client.js'),
   devtool: isProd ? false : 'source-map',
   output: {

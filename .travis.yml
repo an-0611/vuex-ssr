@@ -21,7 +21,7 @@ install:
 script: 
     - docker version
     - docker-compose version
-    - ls node_modules/.bin
+    - ls
     - yarn build
     - docker build -t $IMAGE:$COMMIT . --no-cache
 

@@ -17,6 +17,7 @@ before_install:
 install: 
     # install dep
     - npm install -g heroku
+    - echo "yes" | npm install -g webpack
 
 script: 
     - docker version

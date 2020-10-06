@@ -21,7 +21,7 @@ install:
 script: 
     - docker version
     - docker-compose version
-    - npm run build
+    - yarn build
     - docker build -t $IMAGE:$COMMIT . --no-cache
 
 deploy:

@@ -18,7 +18,7 @@ install:
     # install dep
     - npm install -g
     - npm install -g heroku
-    - npm i -g webpack webpack-cli
+    - npm i -g webpack-cli -D --save
 
 script: 
     - docker version

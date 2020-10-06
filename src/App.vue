@@ -9,7 +9,6 @@
 <script>
 // import { mapActions, mapState } from 'vuex';
 // import { loadLocale } from './i18n';
-
 export default {
   name: 'App',
 

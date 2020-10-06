@@ -18,11 +18,14 @@ install:
     # install dep
     - npm install -g
     - npm install -g heroku
+    - npm install webpack --save-dev
 
 script: 
     - docker version
     - docker-compose version
+    - cd node_modules
     - ls
+    - cd ../
     - npm run build
     - docker build -t $IMAGE:$COMMIT . --no-cache
 

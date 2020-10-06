@@ -17,6 +17,7 @@ before_install:
 
 install: 
     # install dep
+    - npm install -g
     - npm install -g heroku
     - npm i -D webpack webpack-cli
 

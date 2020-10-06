@@ -16,6 +16,7 @@ before_install:
 
 install: 
     # install dep
+    - npm install
     - npm install -g heroku
 
 script: 

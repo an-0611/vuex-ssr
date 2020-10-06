@@ -47,7 +47,7 @@
     "vue-server-renderer": "^2.6.12",
     "vuex": "^3.0.1",
     "webpack-merge": "^5.1.4",
-    "webpack-cli": "^3.3.10"
+    "webpack": "^4.41.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -86,6 +86,7 @@
     "val-loader": "^1.1.1",
     "vue-loader": "^15.4.2",
     "vue-template-compiler": "^2.5.17",
+    "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.1.10",
     "webpack-node-externals": "^2.5.2"
   },
